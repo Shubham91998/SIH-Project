@@ -243,10 +243,7 @@ const handleSendMessage = async () => {
   };
 
   // Function to call Gemini API (mock implementation)
-  const callGeminiAPI = async (userMessage, history) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const lowerMessage = userMessage.toLowerCase();
 
   // Add health topic from button click
   const handleTopicClick = (topic) => {
@@ -659,5 +656,6 @@ const handleSendMessage = async () => {
     </div>
   );
 };
+
 
 export default App;

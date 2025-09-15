@@ -5,6 +5,13 @@ import { fileURLToPath } from 'url';
 import { connect } from 'mongoose';
 import dotenv from 'dotenv';
 
+// Routes
+import chatRoutes from './routes/chat.js';
+import sessionRoutes from './routes/session.js';
+import healthRoutes from './routes/health.js';
+import errorHandler from './middlewere/errorHandler.js';
+
+
 // Setup dirname for ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -31,11 +38,7 @@ connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/healthchat', {
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
-// Routes
-import chatRoutes from './routes/chat.js';
-import sessionRoutes from './routes/session.js';
-import healthRoutes from './routes/health.js';
-import errorHandler from './middlewere/errorHandler.js';
+
 
 app.use('/api/chat', chatRoutes);
 app.use('/api/sessions', sessionRoutes);
