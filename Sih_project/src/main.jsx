@@ -11,15 +11,18 @@ import DiseaseDashboard from "./components/DiseaseDashboard.jsx"
 import FeedbacRepo from "./components/FeedbackReportPage.jsx"
 import Hospitels from "./components/VaccineHospitalPage.jsx"
 import Report from "./components/ReportPage.jsx"
+import HomePage from "./components/HomePage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <Routes>
         {/* When user opens /vaccine, it loads VaccineForm */}
-        <Route path="/" element={<App />} />
-        <Route path="/vaccine" element={<VaccineForm />} />
-        <Route path="/registration" element={<RegistrationForm />} />
+
+        <Route path="/chatbot" element={<App />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/vaccine-scheduler" element={<VaccineForm />} />
+        <Route path="/register" element={<RegistrationForm />} />
         <Route path="/diseasereport" element={<DiseaseDashboard />} />
         <Route path="/feedback-reports" element={<FeedbacRepo />} />
         <Route path="/hospitals-and-vaccines" element={<Hospitels />} />
